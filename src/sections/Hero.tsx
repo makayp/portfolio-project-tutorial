@@ -11,7 +11,7 @@ export default function Hero() {
     <div className='py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip'>
       <div className='absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_70%,transparent)]'>
         <div
-          className='absolute inset-0 opacity-[0.02]'
+          className='absolute inset-0 opacity-5'
           style={{ backgroundImage: `url(${grainImage.src})` }}
         />
         <div className='hero-ring size-[620px]' />
@@ -58,7 +58,9 @@ export default function Hero() {
             className='size-[100px]'
           />
           <div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg'>
-            <div className='bg-green-500 size-2.5 rounded-full relative'></div>
+            <div className='bg-green-500 size-2.5 rounded-full relative'>
+              <div className='bg-green-500 absolute inset-0 rounded-full animate-ping'></div>
+            </div>
             <div className='text-sm font-medium'>
               Available for new projects
             </div>
