@@ -18,35 +18,85 @@ export default function Hero() {
         <div className='hero-ring size-[820px]' />
         <div className='hero-ring size-[1020px]' />
         <div className='hero-ring size-[1220px]' />
-        <Orbit size={800} rotation={-72}>
-          <StarIcon className='size-28 text-emerald-300' />
-        </Orbit>
-        <Orbit size={550} rotation={20}>
-          <StarIcon className='size-12 text-emerald-300' />
-        </Orbit>
-        <Orbit size={590} rotation={98}>
-          <StarIcon className='size-8 text-emerald-300' />
-        </Orbit>{' '}
-        <Orbit size={430} rotation={-14}>
+
+        <Orbit
+          size={430}
+          rotation={-14}
+          shouldOrbit
+          orbitDuration='30s'
+          shouldSpin
+          spinDuration='3s'
+        >
           <SparkleIcon className='size-8 text-emerald-300/20' />
         </Orbit>
-        <Orbit size={440} rotation={79}>
+        <Orbit
+          size={440}
+          rotation={79}
+          shouldOrbit
+          orbitDuration='32s'
+          shouldSpin
+          spinDuration='3s'
+        >
           <SparkleIcon className='size-5 text-emerald-300/20' />
         </Orbit>
-        <Orbit size={530} rotation={178}>
+        <Orbit size={520} rotation={-41} shouldOrbit orbitDuration='34s'>
+          <div className='size-2 rounded-full bg-emerald-300/20' />
+        </Orbit>
+        <Orbit
+          size={530}
+          rotation={178}
+          shouldOrbit
+          orbitDuration='36s'
+          shouldSpin
+          spinDuration='3s'
+        >
           <SparkleIcon className='size-10 text-emerald-300/20' />
         </Orbit>
-        <Orbit size={710} rotation={144}>
+        <Orbit
+          size={550}
+          rotation={20}
+          shouldOrbit
+          orbitDuration='38s'
+          shouldSpin
+          spinDuration='6s'
+        >
+          <StarIcon className='size-12 text-emerald-300' />
+        </Orbit>
+        <Orbit
+          size={590}
+          rotation={98}
+          shouldOrbit
+          orbitDuration='40s'
+          shouldSpin
+          spinDuration='6s'
+        >
+          <StarIcon className='size-8 text-emerald-300' />
+        </Orbit>
+        <Orbit size={650} rotation={-5} shouldOrbit orbitDuration='42s'>
+          <div className='size-2 rounded-full bg-emerald-300/20' />
+        </Orbit>
+        <Orbit
+          size={710}
+          rotation={144}
+          shouldOrbit
+          orbitDuration='44s'
+          shouldSpin
+          spinDuration='3s'
+        >
           <SparkleIcon className='size-14 text-emerald-300/20' />
         </Orbit>
-        <Orbit size={720} rotation={84}>
+        <Orbit size={720} rotation={84} shouldOrbit orbitDuration='46s'>
           <div className='size-3 rounded-full bg-emerald-300/20' />
         </Orbit>
-        <Orbit size={520} rotation={-41}>
-          <div className='size-2 rounded-full bg-emerald-300/20' />
-        </Orbit>
-        <Orbit size={650} rotation={-5}>
-          <div className='size-2 rounded-full bg-emerald-300/20' />
+        <Orbit
+          size={800}
+          rotation={-72}
+          shouldOrbit
+          orbitDuration='48s'
+          shouldSpin
+          spinDuration='6s'
+        >
+          <StarIcon className='size-28 text-emerald-300' />
         </Orbit>
       </div>
 
@@ -59,7 +109,7 @@ export default function Hero() {
           />
           <div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg'>
             <div className='bg-green-500 size-2.5 rounded-full relative'>
-              <div className='bg-green-500 absolute inset-0 rounded-full animate-ping'></div>
+              <div className='bg-green-500 absolute inset-0 rounded-full animate-ping-large'></div>
             </div>
             <div className='text-sm font-medium'>
               Available for new projects

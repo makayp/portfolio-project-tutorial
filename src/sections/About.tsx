@@ -1,19 +1,18 @@
-import Image from 'next/image';
 import Card from '@/components/Card';
+import CardHeader from '@/components/CardHeader';
+import Hobbies from '@/components/Hobbies';
 import SectionHeader from '@/components/SectionHeader';
-import StarIcon from '@/public/icons/star.svg';
-import bookImage from '@/public/images/book-cover.png';
-import JavascriptIcon from '@/public/icons/square-js.svg';
-import HTMLIcon from '@/public/icons/html5.svg';
-import CSSIcon from '@/public/icons/css3.svg';
-import ReactIcon from '@/public/icons/react.svg';
+import ToolboxItems from '@/components/ToolboxItems';
 import ChromeIcon from '@/public/icons/chrome.svg';
+import CSSIcon from '@/public/icons/css3.svg';
 import GithubIcon from '@/public/icons/github.svg';
-import TechIcon from '@/components/TechIcon';
+import HTMLIcon from '@/public/icons/html5.svg';
+import ReactIcon from '@/public/icons/react.svg';
+import JavascriptIcon from '@/public/icons/square-js.svg';
+import bookImage from '@/public/images/book-cover.png';
 import mapImage from '@/public/images/map.png';
 import smileMemoji from '@/public/images/memoji-smile.png';
-import CardHeader from '@/components/CardHeader';
-import ToolboxItems from '@/components/ToolboxItems';
+import Image from 'next/image';
 
 const toolboxItems = [
   { title: 'Javascript', icon: JavascriptIcon },
@@ -22,16 +21,6 @@ const toolboxItems = [
   { title: 'React', icon: ReactIcon },
   { title: 'Chrome', icon: ChromeIcon },
   { title: 'Github', icon: GithubIcon },
-];
-
-const hobbies = [
-  { title: 'Painting', emoji: '🎨', left: '5%', top: '5%' },
-  { title: 'Photography', emoji: '📷', left: '50%', top: '5%' },
-  { title: 'Hiking', emoji: '🥾', left: '35%', top: '40%' },
-  { title: 'Gaming', emoji: '🎮', left: '10%', top: '35%' },
-  { title: 'Music', emoji: '🎵', left: '70%', top: '45%' },
-  { title: 'Fitness', emoji: '🏋️‍♀️', left: '5%', top: '65%' },
-  { title: 'Reading', emoji: '📚', left: '45%', top: '70%' },
 ];
 
 export default function AboutSection() {
@@ -63,11 +52,15 @@ export default function AboutSection() {
                 className='px-6 pt-6'
               />
 
-              <ToolboxItems items={toolboxItems} className='' />
+              <ToolboxItems
+                items={toolboxItems}
+                className=''
+                itemsWrapperClassName='animate-move-left [animation-duration:30s]'
+              />
               <ToolboxItems
                 items={toolboxItems}
                 className='mt-6'
-                itemsWrapperClassName='-translate-x-1/2'
+                itemsWrapperClassName='animate-move-right [animation-duration:15s]'
               />
             </Card>
           </div>
@@ -79,23 +72,7 @@ export default function AboutSection() {
                 className='px-6 py-6'
               />
 
-              <div className='relative flex-1'>
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className='inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute'
-                    style={{
-                      left: hobby.left,
-                      top: hobby.top,
-                    }}
-                  >
-                    <span className='font-medium text-gray-950'>
-                      {hobby.title}
-                    </span>
-                    <span>{hobby.emoji}</span>
-                  </div>
-                ))}
-              </div>
+              <Hobbies />
             </Card>
             <Card className='h-[320px] p-0 relative md:col-span-2 lg:col-span-1'>
               <Image
@@ -104,7 +81,9 @@ export default function AboutSection() {
                 className='h-full w-full object-cover object-left-top'
               />
 
-              <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400  inset-0 outline outline-2 -outline-offset-2 outline-gray-50/30'>
+              <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full   inset-0 outline outline-2 -outline-offset-2 outline-gray-50/30'>
+                <div className='absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]'></div>
+                <div className='absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10'></div>
                 <Image
                   src={smileMemoji}
                   alt='smiling memoji'
